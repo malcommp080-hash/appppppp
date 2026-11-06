@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RESPALDAR BD: descarga un .sql con todas las tablas -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".RespaldarBD"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Respaldar BD" />
+            <TextView style="@style/Subtitulo" android:text="Genera una copia completa de la base de datos" />
+
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="🗄  Respaldo de la base de datos" />
+                <TextView style="@style/TarjetaTexto" android:layout_marginBottom="6dp" android:text="Se descarga un archivo .sql con todas las tablas (estructura y datos). Con él puedes restaurar la información desde «Restaurar BD»." />
+                <TextView style="@style/TarjetaTexto" android:layout_marginBottom="10dp" android:text="En el celular se abrirá el menú para compartir: elige dónde guardarlo (Drive, correo, archivos…)." android:textColor="@color/amarillo" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnDescargar" style="@style/Boton.Exito" android:text="⬇  Descargar respaldo" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Misma paleta que el panel web de DISTRIBUIDORA DAVID (public/css/style.css) -->
+    <color name="fondo">#0F1117</color>
+    <color name="menu">#1A1D27</color>
+    <color name="tarjeta">#1E2130</color>
+    <color name="borde">#2A2F45</color>
+    <color name="input">#11141E</color>
+    <color name="placeholder">#444D6B</color>
+    <color name="texto">#E4E8F0</color>
+    <color name="texto_suave">#7A8099</color>
+    <color name="primario">#4F8EF7</color>
+    <color name="primario_oscuro">#2563EB</color>
+    <color name="turquesa">#22D3A5</color>
+    <color name="amarillo">#F7C948</color>
+    <color name="exito">#22C55E</color>
+    <color name="aviso">#F97316</color>
+    <color name="peligro">#EF4444</color>
+    <color name="morado">#A855F7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Tarjetas de estadísticas (.sc-teal, .sc-green, .sc-amber, .sc-red) -->
+    <color name="teal_1">#0D9488</color>
+    <color name="teal_2">#14B8A6</color>
+    <color name="green_1">#16A34A</color>
+    <color name="green_2">#22C55E</color>
+    <color name="amber_1">#D97706</color>
+    <color name="amber_2">#F59E0B</color>
+    <color name="red_1">#DC2626</color>
+    <color name="red_2">#EF4444</color>
+
+    <!-- Badges (.bg-green, .bg-orange, .bg-blue, .bg-red) -->
+    <color name="badge_verde">#2622C55E</color>
+    <color name="badge_naranja">#26F97316</color>
+    <color name="badge_azul">#264F8EF7</color>
+    <color name="badge_rojo">#26EF4444</color>
+    <color name="seleccion">#264F8EF7</color>
+</resources>

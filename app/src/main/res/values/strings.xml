@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">DISTRIBUIDORA DAVID</string>
+    <string name="empresa">DISTRIBUIDORA DAVID</string>
+    <string name="admin">Admin</string>
+
+    <!-- Login -->
+    <string name="bienvenido">Bienvenido</string>
+    <string name="acceso_panel">Acceso al panel de administración</string>
+    <string name="numero_telefono">NÚMERO DE TELÉFONO</string>
+    <string name="contrasena">CONTRASEÑA</string>
+    <string name="hint_telefono">Teléfono o \'admin\'</string>
+    <string name="hint_contrasena">••••••••</string>
+    <string name="olvido_contrasena">¿Olvidó su contraseña?</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="pie_login">DISTRIBUIDORA DAVID · Panel administrativo</string>
+
+    <!-- Barra superior -->
+    <string name="volver">Volver</string>
+    <string name="salir">Salir</string>
+    <string name="notificaciones_icono">Notificaciones</string>
+
+    <!-- Secciones del menú lateral (las mismas del panel web) -->
+    <string name="sec_principal">Principal</string>
+    <string name="sec_operatividad">Operatividad</string>
+    <string name="sec_catalogos">Catálogos</string>
+    <string name="sec_sistema">Sistema</string>
+
+    <string name="m_dashboard">Dashboard</string>
+    <string name="m_notificaciones">Notificaciones</string>
+    <string name="m_ventas">Ventas</string>
+    <string name="m_pedidos_clientes">Pedidos de clientes</string>
+    <string name="m_pedidos_proveedores">Pedidos a proveedores</string>
+    <string name="m_proveedores">Proveedores</string>
+    <string name="m_validacion_pago">Validación de pago</string>
+    <string name="m_cotizaciones">Cotizaciones</string>
+    <string name="m_clientes">Clientes</string>
+    <string name="m_prendas">Prendas</string>
+    <string name="m_productos">Productos</string>
+    <string name="m_inventario">Inventario</string>
+    <string name="m_usuarios">Usuarios</string>
+    <string name="m_respaldar">Respaldar BD</string>
+    <string name="m_restaurar">Restaurar BD</string>
+    <string name="m_reportes">Reportes de ventas</string>
+    <string name="m_reporte_pdf">Reporte PDF</string>
+    <string name="m_bitacora">Bitácora de accesos</string>
+    <string name="m_nueva_venta">Registrar venta</string>
+    <string name="m_resumen_venta">Resumen de venta</string>
+    <string name="m_cotizacion">Cotización</string>
+
+    <!-- Botones comunes -->
+    <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="buscar">Buscar…</string>
+    <string name="consultar">Consultar</string>
+    <string name="todos">Todos</string>
+
+    <!-- Campos comunes -->
+    <string name="nombre">Nombre</string>
+    <string name="ap_paterno">Apellido paterno</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="cp">Código postal</string>
+    <string name="cliente">Cliente</string>
+    <string name="proveedor">Proveedor</string>
+    <string name="fecha">Fecha</string>
+    <string name="total">Total</string>
+    <string name="piezas">Piezas</string>
+    <string name="estado">Estado</string>
+    <string name="desde">Desde</string>
+    <string name="hasta">Hasta</string>
+    <string name="hint_fecha">AAAA-MM-DD</string>
+    <string name="hint_dinero">0.00</string>
+    <string name="hint_cero">0</string>
+</resources>

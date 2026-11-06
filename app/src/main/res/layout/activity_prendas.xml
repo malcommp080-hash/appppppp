@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRENDAS: formulario de alta / edición y lista de registros, como en el panel web -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Prendas"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Prendas" />
+            <TextView style="@style/Subtitulo" android:text="Registro y administración de prendas" />
+
+            <!-- Formulario (.fcard) -->
+            <LinearLayout style="@style/Tarjeta" android:layout_marginBottom="18dp" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo prenda" android:textColor="@color/primario" />
+
+                <TextView style="@style/Etiqueta" android:text="Prenda" />
+                <EditText style="@style/Campo" android:hint="Máx. 10 caracteres" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Número de piezas" />
+                <EditText style="@style/Campo" android:hint="0" android:inputType="number" />
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar" />
+            </LinearLayout>
+
+            <!-- Lista (.tcard) -->
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="👕  Prendas registrados (3)" />
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#1  jeans" />
+                        <TextView style="@style/TarjetaTexto" android:text="80 pieza(s)" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar1" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar1" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#2  camisa" />
+                        <TextView style="@style/TarjetaTexto" android:text="68 pieza(s)" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar2" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar2" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#3  blusas" />
+                        <TextView style="@style/TarjetaTexto" android:text="78 pieza(s)" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar3" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar3" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

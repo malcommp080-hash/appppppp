@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRODUCTOS: modelos del catálogo con imagen, precios, mayoreo y tallas -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Productos"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Productos" />
+            <TextView style="@style/Subtitulo" android:text="7 modelos · 133 piezas · 4 con stock bajo" />
+
+            <!-- Formulario del modelo -->
+            <LinearLayout style="@style/Tarjeta" android:layout_marginBottom="18dp" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo modelo" android:textColor="@color/primario" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/imgFoto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:background="@drawable/fondo_foto"
+                        android:clipToOutline="true"
+                        android:contentDescription="Foto del modelo"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/prod_polo" />
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnElegirImagen" style="@style/BotonContorno" android:layout_height="40dp" android:layout_marginTop="0dp" android:text="🖼  Elegir imagen" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnQuitarImagen" style="@style/BotonContorno" android:layout_height="40dp" android:text="✖  Quitar imagen" />
+                        <TextView style="@style/TarjetaTexto" android:text="JPG, PNG o WEBP, máx. 4 MB" android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/Etiqueta" android:text="Nombre del modelo" />
+                <EditText style="@style/Campo" android:hint="Ej. Playera cuello V" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Categoría" />
+                <TextView style="@style/Selector" android:text="Playeras" />
+
+                <TextView style="@style/Etiqueta" android:text="Segmento" />
+                <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView style="@style/Chip.Activo" android:text="Caballero" />
+                        <TextView style="@style/Chip" android:text="Dama" />
+                        <TextView style="@style/Chip" android:text="Niño" />
+                        <TextView style="@style/Chip" android:text="Niña" />
+                        <TextView style="@style/Chip" android:text="Unisex" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Color" />
+                        <EditText style="@style/Campo" android:hint="Opcional" android:inputType="text" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Visible en tienda" />
+                        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swActivo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:checked="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/Etiqueta" android:text="Descripción" />
+                <EditText style="@style/Campo" android:layout_height="70dp" android:gravity="top" android:hint="Opcional" android:inputType="textMultiLine" android:paddingTop="10dp" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Precio proveedor" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_dinero" android:inputType="numberDecimal" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Precio de venta" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_dinero" android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Precio mayoreo" />
+                        <EditText style="@style/Campo" android:hint="Opcional" android:inputType="numberDecimal" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Desde (piezas)" />
+                        <EditText style="@style/Campo" android:hint="5" android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/Etiqueta" android:text="Tallas y stock" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <EditText style="@style/Campo" android:layout_width="0dp" android:layout_marginEnd="8dp" android:layout_weight="1" android:hint="Talla" android:inputType="textCapCharacters" android:text="M" />
+                    <EditText style="@style/Campo" android:layout_width="0dp" android:layout_weight="1" android:hint="Stock" android:inputType="number" android:text="0" />
+                    <TextView style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView style="@style/Chip" android:text="+ XCH" />
+                        <TextView style="@style/Chip" android:text="+ CH" />
+                        <TextView style="@style/Chip" android:text="+ G" />
+                        <TextView style="@style/Chip" android:text="+ XG" />
+                        <TextView style="@style/Chip" android:text="+ XXG" />
+                        <TextView style="@style/Chip" android:text="+ UNI" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar" />
+            </LinearLayout>
+
+            <EditText style="@style/Campo" android:drawableStart="@android:drawable/ic_menu_search" android:drawablePadding="8dp" android:drawableTint="@color/texto_suave" android:hint="Buscar modelo" android:inputType="text" />
+
+            <!-- Modelo con imagen -->
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:layout_width="52dp" android:layout_height="52dp" android:background="@drawable/fondo_foto" android:clipToOutline="true" android:contentDescription="Playera polo" android:scaleType="centerCrop" app:srcCompat="@drawable/prod_polo" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="Playera polo" />
+                        <TextView style="@style/TarjetaTexto" android:text="Playeras · Caballero" />
+                        <TextView style="@style/Monto" android:text="$189.00  · mayoreo $150.00 desde 6" android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar1" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar1" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="CH: 6" />
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="M: 5" />
+                    <TextView style="@style/Badge.Azul" android:text="G: 8" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:layout_width="52dp" android:layout_height="52dp" android:background="@drawable/fondo_foto" android:clipToOutline="true" android:contentDescription="Blusa casual" android:scaleType="centerCrop" app:srcCompat="@drawable/prod_dama" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="Blusa casual" />
+                        <TextView style="@style/TarjetaTexto" android:text="Playeras · Dama" />
+                        <TextView style="@style/Monto" android:text="$229.00  · mayoreo $190.00 desde 6" android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar2" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar2" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Rojo" android:layout_marginEnd="4dp" android:text="CH: 4" />
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="M: 9" />
+                    <TextView style="@style/Badge.Rojo" android:text="G: 3" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <ImageView android:layout_width="52dp" android:layout_height="52dp" android:background="@drawable/fondo_foto" android:clipToOutline="true" android:contentDescription="Vestido infantil" android:scaleType="centerCrop" app:srcCompat="@drawable/prod_nina" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="Vestido infantil" />
+                        <TextView style="@style/TarjetaTexto" android:text="Playeras · Niña" />
+                        <TextView style="@style/Monto" android:text="$259.00" android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar3" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar3" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="4: 5" />
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="6: 7" />
+                    <TextView style="@style/Badge.Rojo" android:text="8: 2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView android:layout_width="52dp" android:layout_height="52dp" android:background="@drawable/fondo_foto" android:gravity="center" android:text="👕" android:textSize="20sp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="Chamarra acolchada" />
+                        <TextView style="@style/TarjetaTexto" android:text="Chamarras · Caballero" />
+                        <TextView style="@style/Monto" android:text="$600.00  · mayoreo $400.00 desde 5" android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar4" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar4" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Rojo" android:layout_marginEnd="4dp" android:text="CH: 4" />
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="M: 7" />
+                    <TextView style="@style/Badge.Azul" android:layout_marginEnd="4dp" android:text="G: 11" />
+                    <TextView style="@style/Badge.Naranja" android:text="Oculto en tienda" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

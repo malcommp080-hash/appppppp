@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- REGISTRAR VENTA: venta en mostrador con cliente, forma de pago y productos -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".NuevaVenta"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Registrar venta" />
+            <TextView style="@style/Subtitulo" android:text="Venta en mostrador; el stock se descuenta al guardar" />
+
+            <!-- Cliente y pago -->
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="👤  Cliente y pago" />
+
+                <TextView style="@style/Etiqueta" android:text="@string/cliente" />
+                <TextView android:id="@+id/selCliente" style="@style/Selector" android:text="Laura Hernández" />
+
+                <TextView style="@style/Etiqueta" android:text="Forma de pago" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/Chip.Activo" android:text="Efectivo" />
+                    <TextView style="@style/Chip" android:text="Tarjeta" />
+                    <TextView style="@style/Chip" android:text="Transferencia" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Producto 1 -->
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/SeccionTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="📦  Producto 1" android:textColor="@color/turquesa" />
+                    <TextView android:id="@+id/btnQuitar1" style="@style/Icono" android:paddingTop="0dp" android:text="🗑" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/selProducto1" style="@style/Selector" android:text="Playera polo" />
+
+                <TextView style="@style/Etiqueta" android:text="Talla (piezas disponibles)" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:orientation="horizontal">
+                    <TextView style="@style/Chip" android:text="CH (6)" />
+                    <TextView style="@style/Chip" android:text="M (5)" />
+                    <TextView style="@style/Chip.Activo" android:text="G (8)" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Cantidad" />
+                        <EditText style="@style/Campo" android:inputType="number" android:text="3" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="Subtotal" />
+                        <TextView style="@style/Monto" android:layout_height="46dp" android:gravity="center_vertical" android:text="$567.00" android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/TarjetaTexto" android:text="Mayoreo: $150.00 desde 6 piezas" />
+            </LinearLayout>
+
+            <!-- Producto 2 -->
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/SeccionTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="📦  Producto 2" android:textColor="@color/turquesa" />
+                    <TextView android:id="@+id/btnQuitar2" style="@style/Icono" android:paddingTop="0dp" android:text="🗑" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/selProducto2" style="@style/Selector" android:text="Selecciona un producto" android:textColor="@color/placeholder" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAgregarProducto"
+                style="@style/BotonContorno"
+                android:layout_marginBottom="16dp"
+                android:text="＋  Agregar producto" />
+
+            <!-- Total -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/fondo_total"
+                android:orientation="horizontal"
+                android:padding="14dp">
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Total estimado" android:textColor="@color/texto" android:textSize="16sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$567.00" android:textColor="@color/texto" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardarVenta" style="@style/Boton.Exito" android:text="💾  Guardar venta" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnCancelar" style="@style/BotonContorno" android:layout_marginTop="10dp" android:text="@string/cancelar" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

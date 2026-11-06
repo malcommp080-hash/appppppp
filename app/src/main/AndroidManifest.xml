@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VistasApp">
+
+        <!-- Login: primera pantalla -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Menú lateral (sidebar del panel web) -->
+        <activity android:name=".Menu" android:exported="false" />
+
+        <!-- Principal -->
+        <activity android:name=".Dashboard" android:exported="false" />
+        <activity android:name=".Notificaciones" android:exported="false" />
+
+        <!-- Operatividad -->
+        <activity android:name=".Ventas" android:exported="false" />
+        <activity android:name=".NuevaVenta" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ResumenVenta" android:exported="false" />
+        <activity android:name=".PedidosClientes" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".PedidosProveedores" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Proveedores" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ValidacionPago" android:exported="false" />
+        <activity android:name=".Cotizaciones" android:exported="false" />
+        <activity android:name=".DetalleCotizacion" android:exported="false" />
+
+        <!-- Catálogos -->
+        <activity android:name=".Clientes" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Prendas" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Productos" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Inventario" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".Usuarios" android:exported="false" android:windowSoftInputMode="adjustResize" />
+
+        <!-- Sistema -->
+        <activity android:name=".RespaldarBD" android:exported="false" />
+        <activity android:name=".RestaurarBD" android:exported="false" />
+        <activity android:name=".Reportes" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ReportePdf" android:exported="false" />
+        <activity android:name=".Bitacora" android:exported="false" />
+    </application>
+
+</manifest>

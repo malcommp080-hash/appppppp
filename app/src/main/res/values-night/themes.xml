@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- La app siempre es oscura: el modo noche usa el mismo tema -->
+    <style name="Base.Theme.VistasApp" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/turquesa</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorSurface">@color/tarjeta</item>
+        <item name="android:statusBarColor">@color/menu</item>
+        <item name="android:navigationBarColor">@color/fondo</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorHint">@color/placeholder</item>
+    </style>
+</resources>

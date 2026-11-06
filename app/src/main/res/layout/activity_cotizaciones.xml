@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COTIZACIONES: las que generan los clientes desde su carrito (RF009) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Cotizaciones"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Cotizaciones" />
+            <TextView style="@style/Subtitulo" android:text="Cotizaciones que los clientes generan desde su carrito" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:orientation="horizontal">
+                <TextView style="@style/Chip.Activo" android:text="Pendientes" />
+                <TextView style="@style/Chip" android:text="Atendidas" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/cotizacion3" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#3  Laura Hernández" />
+                    <TextView style="@style/Monto" android:text="$3,456.00" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="02/11/2026 20:10 · 2 producto(s)" />
+                <TextView style="@style/Badge.Naranja" android:layout_marginTop="6dp" android:text="Pendiente" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/cotizacion2" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#2  Jorge Martínez" />
+                    <TextView style="@style/Monto" android:text="$2,000.00" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="31/10/2026 13:25 · 1 producto(s)" />
+                <TextView style="@style/Badge.Naranja" android:layout_marginTop="6dp" android:text="Pendiente" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#1  Ana López" />
+                    <TextView style="@style/Monto" android:text="$2,400.00" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="22/10/2026 09:40 · 1 producto(s)" />
+                <TextView style="@style/Badge.Verde" android:layout_marginTop="6dp" android:text="Atendida por Admin Sistema · 22/10/2026 12:00" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Barra superior de todas las pantallas del panel (.topbar del panel web):
+  botón para volver al menú, título, notificaciones y salir.
+  Se agrega en cada pantalla con <include layout="@layout/barra_superior" />.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/fondo_barra"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="12dp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/btnVolver"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/volver"
+        android:gravity="center"
+        android:text="☰"
+        android:textColor="@color/texto"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/txtTituloBarra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/texto"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Dashboard" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNotificaciones"
+        style="@style/BotonChico"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="@string/notificaciones_icono"
+        android:text="🔔" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSalir"
+        style="@style/BotonChico"
+        android:text="⏏ Salir" />
+
+</LinearLayout>

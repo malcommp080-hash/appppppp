@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- USUARIOS: formulario de alta / edición y lista de registros, como en el panel web -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Usuarios"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Usuarios" />
+            <TextView style="@style/Subtitulo" android:text="Registro y administración de usuarios" />
+
+            <!-- Formulario (.fcard) -->
+            <LinearLayout style="@style/Tarjeta" android:layout_marginBottom="18dp" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo usuario" android:textColor="@color/primario" />
+
+                <TextView style="@style/Etiqueta" android:text="Nombre" />
+                <EditText style="@style/Campo" android:hint="Nombre" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Apellido paterno" />
+                <EditText style="@style/Campo" android:hint="Apellido paterno" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Teléfono (usuario para entrar)" />
+                <EditText style="@style/Campo" android:hint="10 dígitos" android:inputType="phone" />
+
+                <TextView style="@style/Etiqueta" android:text="Dirección" />
+                <EditText style="@style/Campo" android:hint="Dirección" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Rol" />
+                <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView style="@style/Chip.Activo" android:text="Administrador" />
+                        <TextView style="@style/Chip" android:text="Vendedor" />
+                        <TextView style="@style/Chip" android:text="Almacén" />
+                        <TextView style="@style/Chip" android:text="Contador" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView style="@style/Etiqueta" android:text="Contraseña" />
+                <EditText style="@style/Campo" android:hint="Mínimo 6 caracteres" android:inputType="textPassword" />
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar" />
+            </LinearLayout>
+
+            <!-- Lista (.tcard) -->
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="🔑  Usuarios registrados (2)" />
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#2  Vendedor Prueba" />
+                        <TextView style="@style/TarjetaTexto" android:text="Vendedor · 5500000002" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar2" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar2" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#1  Admin Sistema" />
+                        <TextView style="@style/TarjetaTexto" android:text="Administrador · admin" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar1" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar1" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

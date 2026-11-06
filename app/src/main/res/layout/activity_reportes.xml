@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- REPORTES DE VENTAS: ventas por semana y por mes (RF007) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Reportes"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Reportes de ventas" />
+            <TextView style="@style/Subtitulo" android:text="Ventas agrupadas por semana y por mes en un rango de fechas" />
+
+            <!-- Rango de fechas -->
+            <LinearLayout style="@style/Tarjeta" android:layout_marginBottom="16dp" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="🔎  Rango de fechas" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/desde" />
+                        <EditText style="@style/Campo" android:hint="2026-06-01" android:inputType="date" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/hasta" />
+                        <EditText style="@style/Campo" android:hint="2026-11-03" android:inputType="date" />
+                    </LinearLayout>
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnConsultar" style="@style/Boton" android:text="🔍  Consultar" />
+            </LinearLayout>
+
+            <!-- Totales -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <LinearLayout style="@style/Estadistica" android:layout_marginEnd="6dp" android:background="@drawable/sc_green">
+                    <TextView style="@style/EstadisticaValor" android:text="$18,621.65" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Total vendido" />
+                </LinearLayout>
+                <LinearLayout style="@style/Estadistica" android:layout_marginStart="6dp" android:background="@drawable/sc_teal">
+                    <TextView style="@style/EstadisticaValor" android:text="29" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Ventas" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="14dp" android:orientation="horizontal">
+                <LinearLayout style="@style/Estadistica" android:layout_marginEnd="6dp" android:background="@drawable/sc_amber">
+                    <TextView style="@style/EstadisticaValor" android:text="92" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Piezas" />
+                </LinearLayout>
+                <LinearLayout style="@style/Estadistica" android:layout_marginStart="6dp" android:background="@drawable/sc_red">
+                    <TextView style="@style/EstadisticaValor" android:text="$642.13" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Ticket promedio" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/aviso_ok"
+                android:padding="12dp"
+                android:text="✔  Los totales coinciden con las ventas registradas. En línea: $4,365.00."
+                android:textColor="#4ADE80"
+                android:textSize="13sp" />
+
+            <!-- Gráfica -->
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/SeccionTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="📊  Ventas" />
+                    <TextView style="@style/Chip.Activo" android:layout_marginBottom="12dp" android:text="Por mes" />
+                    <TextView style="@style/Chip" android:layout_marginBottom="12dp" android:text="Por semana" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="140dp" android:gravity="bottom" android:orientation="horizontal">
+                    <View android:layout_width="0dp" android:layout_height="43dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                    <View android:layout_width="0dp" android:layout_height="47dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                    <View android:layout_width="0dp" android:layout_height="49dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                    <View android:layout_width="0dp" android:layout_height="93dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                    <View android:layout_width="0dp" android:layout_height="140dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                    <View android:layout_width="0dp" android:layout_height="44dp" android:layout_marginHorizontal="6dp" android:layout_weight="1" android:background="@drawable/barra_grafica" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Jun" />
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Jul" />
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Ago" />
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Sep" />
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Oct" />
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:text="Nov" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Detalle por mes -->
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="📋  Detalle por mes" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/fondo_tabla_encabezado" android:orientation="horizontal">
+                    <TextView style="@style/TablaEncabezado" android:text="Mes" />
+                    <TextView style="@style/TablaEncabezado" android:text="Ventas" />
+                    <TextView style="@style/TablaEncabezado" android:text="Total" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:text="Jun. 2026" /><TextView style="@style/TablaCelda" android:text="3 · 9 pzs" /><TextView style="@style/TablaCelda" android:text="$1,939.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:text="Jul. 2026" /><TextView style="@style/TablaCelda" android:text="4 · 12 pzs" /><TextView style="@style/TablaCelda" android:text="$2,100.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:text="Ago. 2026" /><TextView style="@style/TablaCelda" android:text="4 · 11 pzs" /><TextView style="@style/TablaCelda" android:text="$2,195.75" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:text="Sep. 2026" /><TextView style="@style/TablaCelda" android:text="6 · 20 pzs" /><TextView style="@style/TablaCelda" android:text="$4,160.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:text="Oct. 2026" /><TextView style="@style/TablaCelda" android:text="9 · 31 pzs" /><TextView style="@style/TablaCelda" android:text="$6,244.90" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null"><TextView style="@style/TablaCelda" android:text="Nov. 2026" /><TextView style="@style/TablaCelda" android:text="3 · 9 pzs" /><TextView style="@style/TablaCelda" android:text="$1,982.00" /></LinearLayout>
+            </LinearLayout>
+
+            <!-- Más vendidos -->
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="🏆  Productos más vendidos" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/fondo_tabla_encabezado" android:orientation="horizontal">
+                    <TextView style="@style/TablaEncabezado" android:layout_weight="0.4" android:text="#" />
+                    <TextView style="@style/TablaEncabezado" android:layout_weight="1.6" android:text="Producto" />
+                    <TextView style="@style/TablaEncabezado" android:text="Importe" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:layout_weight="0.4" android:text="1" /><TextView style="@style/TablaCelda" android:layout_weight="1.6" android:text="Chamarra acolchada (9 pzs)" /><TextView style="@style/TablaCelda" android:text="$5,400.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:layout_weight="0.4" android:text="2" /><TextView style="@style/TablaCelda" android:layout_weight="1.6" android:text="Playera polo (18 pzs)" /><TextView style="@style/TablaCelda" android:text="$3,102.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:layout_weight="0.4" android:text="3" /><TextView style="@style/TablaCelda" android:layout_weight="1.6" android:text="Blusa casual (11 pzs)" /><TextView style="@style/TablaCelda" android:text="$2,519.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon"><TextView style="@style/TablaCelda" android:layout_weight="0.4" android:text="4" /><TextView style="@style/TablaCelda" android:layout_weight="1.6" android:text="Gorra (25 pzs)" /><TextView style="@style/TablaCelda" android:text="$2,140.00" /></LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null"><TextView style="@style/TablaCelda" android:layout_weight="0.4" android:text="5" /><TextView style="@style/TablaCelda" android:layout_weight="1.6" android:text="Jeans slim (5 pzs)" /><TextView style="@style/TablaCelda" android:text="$1,745.00" /></LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

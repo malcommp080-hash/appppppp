@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PEDIDOS A PROVEEDORES: compras de mercancía y su estado -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".PedidosProveedores"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Pedidos a proveedores" />
+            <TextView style="@style/Subtitulo" android:text="Compras de mercancía y su estado" />
+
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo pedido a proveedor" android:textColor="@color/primario" />
+
+                <TextView style="@style/Etiqueta" android:text="@string/proveedor" />
+                <TextView style="@style/Selector" android:text="Selecciona un proveedor" android:textColor="@color/placeholder" />
+
+                <TextView style="@style/Etiqueta" android:text="@string/fecha" />
+                <EditText style="@style/Campo" android:hint="@string/hint_fecha" android:inputType="date" android:text="2026-11-03" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/total" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_dinero" android:inputType="numberDecimal" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/piezas" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_cero" android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/Etiqueta" android:text="@string/estado" />
+                <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:scrollbars="none">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView style="@style/Chip.Activo" android:text="Pendiente" />
+                        <TextView style="@style/Chip" android:text="Enviado" />
+                        <TextView style="@style/Chip" android:text="Recibido" />
+                        <TextView style="@style/Chip" android:text="Cancelado" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar pedido" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#31  Textiles del Centro" />
+                    <TextView style="@style/Badge.Azul" android:text="ENVIADO" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="01/11/2026 · 120 pza(s) · $8,500.00" />
+                    <TextView android:id="@+id/btnEliminar31" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#30  Confecciones Atlixco" />
+                    <TextView style="@style/Badge.Verde" android:text="RECIBIDO" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="20/10/2026 · 80 pza(s) · $5,200.00" />
+                    <TextView android:id="@+id/btnEliminar30" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#29  Textiles del Centro" />
+                    <TextView style="@style/Badge.Rojo" android:text="CANCELADO" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="15/10/2026 · 30 pza(s) · $1,500.00" />
+                    <TextView android:id="@+id/btnEliminar29" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

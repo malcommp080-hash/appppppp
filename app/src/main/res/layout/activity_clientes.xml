@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CLIENTES: formulario de alta / edición y lista de registros, como en el panel web -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Clientes"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Clientes" />
+            <TextView style="@style/Subtitulo" android:text="Registro y administración de clientes" />
+
+            <!-- Formulario (.fcard) -->
+            <LinearLayout style="@style/Tarjeta" android:layout_marginBottom="18dp" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo cliente" android:textColor="@color/primario" />
+
+                <TextView style="@style/Etiqueta" android:text="Nombre" />
+                <EditText style="@style/Campo" android:hint="Nombre" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Apellido paterno" />
+                <EditText style="@style/Campo" android:hint="Apellido paterno" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Teléfono" />
+                <EditText style="@style/Campo" android:hint="10 dígitos" android:inputType="phone" />
+
+                <TextView style="@style/Etiqueta" android:text="Dirección" />
+                <EditText style="@style/Campo" android:hint="Calle, número, colonia" android:inputType="text" />
+
+                <TextView style="@style/Etiqueta" android:text="Código postal" />
+                <EditText style="@style/Campo" android:hint="5 dígitos" android:inputType="number" />
+
+                <TextView style="@style/Etiqueta" android:text="Contraseña de la tienda" />
+                <EditText style="@style/Campo" android:hint="Mínimo 4 caracteres" android:inputType="textPassword" />
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar" />
+            </LinearLayout>
+
+            <!-- Lista (.tcard) -->
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="👥  Clientes registrados (6)" />
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#6  Laura Hernández" />
+                        <TextView style="@style/TarjetaTexto" android:text="5512345678 · Av. Juárez 120, Centro · CP 74000" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar6" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar6" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#5  Miguel Ramírez" />
+                        <TextView style="@style/TarjetaTexto" android:text="5523456789 · Calle 5 de Mayo 45 · CP 74010" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar5" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar5" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#4  Sofía Torres" />
+                        <TextView style="@style/TarjetaTexto" android:text="5534567890 · Privada Las Flores 8 · CP 74020" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar4" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar4" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#3  Jorge Martínez" />
+                        <TextView style="@style/TarjetaTexto" android:text="5545678901 · Blvd. Reforma 300 · CP 74053" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar3" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar3" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#2  Ana López" />
+                        <TextView style="@style/TarjetaTexto" android:text="5556789012 · Calle Hidalgo 12 · CP 74060" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar2" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar2" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="12dp" android:paddingEnd="8dp" android:paddingBottom="12dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/TarjetaTitulo" android:text="#1  Carlos Gómez" />
+                        <TextView style="@style/TarjetaTexto" android:text="5567890123 · Av. Libertad 77 · CP 74070" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnEditar1" style="@style/Icono" android:text="✏️" />
+                    <TextView android:id="@+id/btnEliminar1" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

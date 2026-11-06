@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- NOTIFICACIONES: avisos del sistema para el empleado -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Notificaciones"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Notificaciones" />
+            <TextView style="@style/Subtitulo" android:text="Avisos del sistema para ti y para todos los empleados" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLeerTodas"
+                style="@style/BotonContorno"
+                android:layout_marginBottom="14dp"
+                android:text="✔✔  Marcar todas como leídas" />
+
+            <!-- No leída (con borde azul a la izquierda) -->
+            <LinearLayout style="@style/Tarjeta" android:orientation="horizontal">
+                <View android:layout_width="3dp" android:layout_height="match_parent" android:layout_marginEnd="10dp" android:background="@color/primario" />
+                <TextView android:layout_width="34dp" android:layout_height="34dp" android:layout_marginEnd="12dp" android:background="@drawable/badge_azul" android:gravity="center" android:text="🔔" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/Etiqueta" android:layout_marginBottom="2dp" android:text="PAGO POR VALIDAR" android:textSize="10sp" />
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="match_parent" android:text="Laura Hernández subió el ticket del pago P-20261102-000024." />
+                    <TextView style="@style/TarjetaTexto" android:text="02/11/2026 18:52" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta" android:orientation="horizontal">
+                <View android:layout_width="3dp" android:layout_height="match_parent" android:layout_marginEnd="10dp" android:background="@color/primario" />
+                <TextView android:layout_width="34dp" android:layout_height="34dp" android:layout_marginEnd="12dp" android:background="@drawable/badge_azul" android:gravity="center" android:text="🔔" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/Etiqueta" android:layout_marginBottom="2dp" android:text="COTIZACION" android:textSize="10sp" />
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="match_parent" android:text="Nueva cotización #3 de Laura Hernández por $3,456.00." />
+                    <TextView style="@style/TarjetaTexto" android:text="02/11/2026 20:10" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Leída -->
+            <LinearLayout style="@style/Tarjeta" android:orientation="horizontal">
+                <TextView android:layout_width="34dp" android:layout_height="34dp" android:layout_marginEnd="12dp" android:background="@drawable/fondo_input" android:gravity="center" android:text="🔔" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/Etiqueta" android:layout_marginBottom="2dp" android:text="RECUPERAR PASSWORD" android:textSize="10sp" />
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="match_parent" android:text="Vendedor Prueba (tel. 5500000002) solicitó restablecer su contraseña." android:textStyle="normal" />
+                    <TextView style="@style/TarjetaTexto" android:text="29/10/2026 09:15" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

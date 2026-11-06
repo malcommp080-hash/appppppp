@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DETALLE DE COTIZACIÓN -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".DetalleCotizacion"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Cotización #3" />
+            <TextView style="@style/Subtitulo" android:text="Solicitada el 02/11/2026 20:10" />
+
+            <LinearLayout style="@style/Tarjeta">
+                <TextView style="@style/SeccionTitulo" android:text="👤  Laura Hernández" />
+                <TextView style="@style/Badge.Naranja" android:text="Pendiente de atender" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnLlamar" style="@style/BotonContorno" android:layout_marginTop="12dp" android:text="📞  Llamar a 5512345678" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta" android:padding="0dp">
+                <TextView style="@style/SeccionTitulo" android:layout_margin="14dp" android:text="🧾  Productos" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/fondo_tabla_encabezado" android:orientation="horizontal">
+                    <TextView style="@style/TablaEncabezado" android:layout_weight="1.4" android:text="Producto" />
+                    <TextView style="@style/TablaEncabezado" android:text="Cant." />
+                    <TextView style="@style/TablaEncabezado" android:text="Subtotal" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/TablaRenglon">
+                    <TextView style="@style/TablaCelda" android:layout_weight="1.4" android:text="Playera polo · M" />
+                    <TextView style="@style/TablaCelda" android:text="12 × $150.00" />
+                    <TextView style="@style/TablaCelda" android:text="$1,800.00" />
+                </LinearLayout>
+                <LinearLayout style="@style/TablaRenglon" android:background="@null">
+                    <TextView style="@style/TablaCelda" android:layout_weight="1.4" android:text="Gorra · UNI" />
+                    <TextView style="@style/TablaCelda" android:text="12 × $80.00" />
+                    <TextView style="@style/TablaCelda" android:text="$960.00" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/fondo_total"
+                android:padding="14dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total $2,760.00" android:textColor="@color/texto" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnAtender" style="@style/Boton.Exito" android:text="✔  Marcar como atendida" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

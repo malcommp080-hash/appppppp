@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BITÁCORA DE ACCESOS: intentos de inicio de sesión (RF014) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Bitacora"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Bitácora de accesos" />
+            <TextView style="@style/Subtitulo" android:text="Últimos 100 intentos de inicio de sesión" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="horizontal">
+                <LinearLayout style="@style/Estadistica" android:layout_marginEnd="6dp" android:background="@drawable/sc_green">
+                    <TextView style="@style/EstadisticaValor" android:text="1" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Accesos hoy" />
+                </LinearLayout>
+                <LinearLayout style="@style/Estadistica" android:layout_marginHorizontal="6dp" android:background="@drawable/sc_amber">
+                    <TextView style="@style/EstadisticaValor" android:text="1" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Fallidos hoy" />
+                </LinearLayout>
+                <LinearLayout style="@style/Estadistica" android:layout_marginStart="6dp" android:background="@drawable/sc_red">
+                    <TextView style="@style/EstadisticaValor" android:text="0" />
+                    <TextView style="@style/EstadisticaEtiqueta" android:text="Bloqueos hoy" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Filtros -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:orientation="horizontal">
+                <TextView style="@style/Chip.Activo" android:text="@string/todos" />
+                <TextView style="@style/Chip" android:text="Panel" />
+                <TextView style="@style/Chip" android:text="Tienda" />
+            </LinearLayout>
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:scrollbars="none">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/Chip.Activo" android:text="@string/todos" />
+                    <TextView style="@style/Chip" android:text="Éxito" />
+                    <TextView style="@style/Chip" android:text="Fallido" />
+                    <TextView style="@style/Chip" android:text="Bloqueado" />
+                    <TextView style="@style/Chip" android:text="Logout" />
+                    <TextView style="@style/Chip" android:text="Inactividad" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="Admin Sistema" />
+                    <TextView style="@style/Badge.Verde" android:text="EXITO" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Panel · tel. admin · IP 192.168.1.20" />
+                <TextView style="@style/TarjetaTexto" android:text="03/11/2026 09:12:04" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="Admin Sistema" />
+                    <TextView style="@style/Badge.Naranja" android:text="FALLIDO" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Panel · tel. admin · IP 192.168.1.20" />
+                <TextView style="@style/TarjetaTexto" android:text="03/11/2026 09:11:40" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="Laura Hernández" />
+                    <TextView style="@style/Badge.Verde" android:text="EXITO" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Tienda · tel. 5512345678 · IP 189.203.10.4" />
+                <TextView style="@style/TarjetaTexto" android:text="02/11/2026 18:30:22" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="Vendedor Prueba" />
+                    <TextView style="@style/Badge.Azul" android:text="INACTIVIDAD" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Panel · IP 192.168.1.31" />
+                <TextView style="@style/TarjetaTexto" android:text="02/11/2026 14:05:10" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="5599999999" />
+                    <TextView style="@style/Badge.Rojo" android:text="BLOQUEADO" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Tienda · tel. 5599999999 · IP 201.141.7.88" />
+                <TextView style="@style/TarjetaTexto" android:text="01/11/2026 22:47:55" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

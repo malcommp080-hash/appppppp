@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PEDIDOS DE CLIENTES: alta de pedido y lista por prioridad -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".PedidosClientes"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Pedidos de clientes" />
+            <TextView style="@style/Subtitulo" android:text="Los más antiguos aparecen primero (más urgentes)" />
+
+            <!-- Nuevo pedido (.fcard) -->
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="➕  Nuevo pedido" android:textColor="@color/primario" />
+
+                <TextView style="@style/Etiqueta" android:text="@string/cliente" />
+                <TextView style="@style/Selector" android:text="Selecciona un cliente" android:textColor="@color/placeholder" />
+
+                <TextView style="@style/Etiqueta" android:text="@string/fecha" />
+                <EditText style="@style/Campo" android:hint="@string/hint_fecha" android:inputType="date" android:text="2026-11-03" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="8dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/total" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_dinero" android:inputType="numberDecimal" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/Etiqueta" android:text="@string/piezas" />
+                        <EditText style="@style/Campo" android:hint="@string/hint_cero" android:inputType="number" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar" style="@style/Boton" android:text="💾  Guardar pedido" />
+            </LinearLayout>
+
+            <!-- Pedidos -->
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#3  Jorge Martínez" />
+                    <TextView style="@style/Badge.Rojo" android:text="URGENTE" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="22/10/2026 · hace 12 día(s)" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="10 pieza(s) · $1,890.00" />
+                    <TextView android:id="@+id/btnEliminar3" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#2  Sofía Torres" />
+                    <TextView style="@style/Badge.Naranja" android:text="ALTA" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="30/10/2026 · hace 4 día(s)" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="5 pieza(s) · $945.50" />
+                    <TextView android:id="@+id/btnEliminar2" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#1  Laura Hernández" />
+                    <TextView style="@style/Badge.Verde" android:text="NORMAL" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="02/11/2026 · hace 1 día(s)" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTexto" android:layout_width="0dp" android:layout_weight="1" android:text="12 pieza(s) · $2,300.00" />
+                    <TextView android:id="@+id/btnEliminar1" style="@style/Icono" android:text="🗑" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

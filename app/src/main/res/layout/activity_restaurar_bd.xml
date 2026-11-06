@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RESTAURAR BD: carga un respaldo .sql (sólo administradores) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".RestaurarBD"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Restaurar BD" />
+            <TextView style="@style/Subtitulo" android:text="Carga un respaldo .sql para recuperar la información" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/aviso_warn"
+                android:padding="12dp"
+                android:text="⚠  Restaurar reemplaza los datos actuales. Haz un respaldo antes por si necesitas regresar."
+                android:textColor="#FDBA74"
+                android:textSize="13sp" />
+
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="⬆  Archivo de respaldo" android:textColor="@color/aviso" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnElegirArchivo" style="@style/BotonContorno" android:text="📄  Elegir archivo .sql" />
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="10dp" android:text="Seleccionado: respaldo_2026-11-01_19-00-00.sql" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnRestaurar" style="@style/Boton.Naranja" android:layout_marginTop="14dp" android:text="⬆  Restaurar base de datos" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

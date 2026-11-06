@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VENTAS: lista de ventas en mostrador y compras en línea -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".Ventas"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Ventas" />
+            <TextView style="@style/Subtitulo" android:text="Ventas en mostrador y compras en línea con pago aprobado" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegistrarVenta"
+                style="@style/Boton.Exito"
+                android:layout_marginBottom="12dp"
+                android:text="＋  Registrar venta" />
+
+            <EditText
+                android:id="@+id/editBuscar"
+                style="@style/Campo"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/texto_suave"
+                android:hint="Buscar por cliente o #folio"
+                android:inputType="text" />
+
+            <!-- Venta #24 -->
+            <LinearLayout android:id="@+id/venta24" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#24  Laura Hernández" />
+                    <TextView style="@style/Monto" android:text="$557.00" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Azul" android:text="En línea" />
+                    <TextView style="@style/TarjetaTexto" android:layout_marginStart="8dp" android:layout_marginTop="0dp" android:text="Depósito / transferencia" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="6dp" android:text="📅 02/11/2026 18:40  ·  3 pza(s)" />
+            </LinearLayout>
+
+            <!-- Venta #23 -->
+            <LinearLayout android:id="@+id/venta23" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#23  Miguel Ramírez" />
+                    <TextView style="@style/Monto" android:text="$567.00" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Verde" android:text="Mostrador" />
+                    <TextView style="@style/TarjetaTexto" android:layout_marginStart="8dp" android:layout_marginTop="0dp" android:text="Efectivo" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="6dp" android:text="📅 02/11/2026 12:15  ·  3 pza(s)" />
+            </LinearLayout>
+
+            <!-- Venta #22 -->
+            <LinearLayout android:id="@+id/venta22" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#22  Sofía Torres" />
+                    <TextView style="@style/Monto" android:text="$858.00" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Verde" android:text="Mostrador" />
+                    <TextView style="@style/TarjetaTexto" android:layout_marginStart="8dp" android:layout_marginTop="0dp" android:text="Tarjeta" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="6dp" android:text="📅 01/11/2026 17:02  ·  3 pza(s)" />
+            </LinearLayout>
+
+            <!-- Venta #21 -->
+            <LinearLayout android:id="@+id/venta21" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#21  Jorge Martínez" />
+                    <TextView style="@style/Monto" android:text="$698.00" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Verde" android:text="Mostrador" />
+                    <TextView style="@style/TarjetaTexto" android:layout_marginStart="8dp" android:layout_marginTop="0dp" android:text="Efectivo" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="6dp" android:text="📅 30/10/2026 11:30  ·  2 pza(s)" />
+            </LinearLayout>
+
+            <!-- Venta #20 -->
+            <LinearLayout android:id="@+id/venta20" style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:text="#20  Ana López" />
+                    <TextView style="@style/Monto" android:text="$518.00" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/Badge.Azul" android:text="En línea" />
+                    <TextView style="@style/TarjetaTexto" android:layout_marginStart="8dp" android:layout_marginTop="0dp" android:text="Depósito / transferencia" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="6dp" android:text="📅 28/10/2026 16:45  ·  2 pza(s)" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

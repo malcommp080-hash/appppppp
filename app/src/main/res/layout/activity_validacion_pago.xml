@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VALIDACIÓN DE PAGO: revisar el ticket de las compras en línea y aprobar o rechazar (RF004) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".ValidacionPago"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Validación de pago" />
+            <TextView style="@style/Subtitulo" android:text="Revisa el ticket de las compras en línea y aprueba o rechaza el pago" />
+
+            <!-- Filtro por estado -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:orientation="horizontal">
+                <TextView style="@style/Chip.Activo" android:text="Pendientes" />
+                <TextView style="@style/Chip" android:text="Aprobados" />
+                <TextView style="@style/Chip" android:text="Rechazados" />
+            </LinearLayout>
+
+            <!-- Pago pendiente -->
+            <LinearLayout style="@style/Tarjeta">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/TarjetaTitulo" android:layout_width="0dp" android:layout_weight="1" android:fontFamily="monospace" android:text="P-20261102-000024" />
+                    <TextView style="@style/Monto" android:text="$557.00" android:textSize="15sp" />
+                </LinearLayout>
+                <TextView style="@style/TarjetaTexto" android:text="Laura Hernández · 5512345678" />
+                <TextView style="@style/Badge.Naranja" android:layout_marginTop="6dp" android:layout_marginBottom="6dp" android:text="Pendiente de validar" />
+                <TextView style="@style/TarjetaTexto" android:text="Referencia: BBVA 884512" />
+                <TextView style="@style/TarjetaTexto" android:text="• 2 × Blusa casual (talla M)" />
+                <TextView style="@style/TarjetaTexto" android:text="• 1 × Gorra (talla UNI)" />
+
+                <!-- Ticket de pago -->
+                <ImageView
+                    android:id="@+id/imgTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/fondo_foto"
+                    android:clipToOutline="true"
+                    android:contentDescription="Ticket de pago"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/prod_dama" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Ver ticket (02/11/2026 18:52)" android:textColor="@color/primario" android:textSize="13sp" android:textStyle="bold" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnAprobar" style="@style/Boton.Exito" android:layout_width="0dp" android:layout_marginEnd="6dp" android:layout_weight="1" android:text="✔  Aprobar" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnRechazar" style="@style/Boton.Peligro" android:layout_width="0dp" android:layout_marginStart="6dp" android:layout_weight="1" android:text="✖  Rechazar" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Motivo del rechazo (en la app real se abre al tocar «Rechazar») -->
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="Rechazar P-20261102-000024" />
+                <TextView style="@style/TarjetaTexto" android:layout_marginTop="0dp" android:layout_marginBottom="10dp" android:text="Las piezas apartadas regresarán al inventario." />
+                <EditText
+                    style="@style/Campo"
+                    android:layout_height="90dp"
+                    android:gravity="top"
+                    android:hint="Motivo del rechazo (lo verá el cliente)"
+                    android:inputType="textMultiLine"
+                    android:paddingTop="12dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnConfirmarRechazo" style="@style/Boton.Peligro" android:text="✖  Rechazar pago" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

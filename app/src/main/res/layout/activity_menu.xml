@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MENÚ: el menú lateral (sidebar) del panel web, con las mismas secciones -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu"
+    android:orientation="vertical"
+    tools:context=".Menu"
+    tools:ignore="HardcodedText">
+
+    <!-- Logo y nombre (.sb-head) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_barra"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="14dp">
+
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/fondo_avatar"
+            android:clipToOutline="true"
+            android:contentDescription="@string/empresa"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/empresa"
+            android:textColor="@color/texto"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Usuario (.sb-user) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_barra"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/fondo_avatar"
+            android:gravity="center"
+            android:text="AS"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin Sistema"
+                android:textColor="@color/texto"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin"
+                android:textColor="@color/texto_suave"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView style="@style/MenuSeccion" android:text="@string/sec_principal" />
+
+            <TextView android:id="@+id/opDashboard" style="@style/MenuOpcion" android:background="@drawable/fondo_menu_activo" android:text="📊   Dashboard" android:textColor="@color/primario" />
+            <TextView android:id="@+id/opNotificaciones" style="@style/MenuOpcion" android:text="🔔   Notificaciones" />
+
+            <TextView style="@style/MenuSeccion" android:text="@string/sec_operatividad" />
+
+            <TextView android:id="@+id/opVentas" style="@style/MenuOpcion" android:text="💲   Ventas" />
+            <TextView android:id="@+id/opPedidosClientes" style="@style/MenuOpcion" android:text="📦   Pedidos de clientes" />
+            <TextView android:id="@+id/opPedidosProveedores" style="@style/MenuOpcion" android:text="🚛   Pedidos a proveedores" />
+            <TextView android:id="@+id/opProveedores" style="@style/MenuOpcion" android:text="🚚   Proveedores" />
+            <TextView android:id="@+id/opValidacionPago" style="@style/MenuOpcion" android:text="💳   Validación de pago" />
+            <TextView android:id="@+id/opCotizaciones" style="@style/MenuOpcion" android:text="🧾   Cotizaciones" />
+
+            <TextView style="@style/MenuSeccion" android:text="@string/sec_catalogos" />
+
+            <TextView android:id="@+id/opClientes" style="@style/MenuOpcion" android:text="👥   Clientes" />
+            <TextView android:id="@+id/opPrendas" style="@style/MenuOpcion" android:text="👕   Prendas" />
+            <TextView android:id="@+id/opProductos" style="@style/MenuOpcion" android:text="🛍️   Productos" />
+            <TextView android:id="@+id/opInventario" style="@style/MenuOpcion" android:text="🏬   Inventario" />
+            <TextView android:id="@+id/opUsuarios" style="@style/MenuOpcion" android:text="🔑   Usuarios" />
+
+            <TextView style="@style/MenuSeccion" android:text="@string/sec_sistema" />
+
+            <TextView android:id="@+id/opRespaldar" style="@style/MenuOpcion" android:text="⬇️   Respaldar BD" />
+            <TextView android:id="@+id/opRestaurar" style="@style/MenuOpcion" android:text="⬆️   Restaurar BD" />
+            <TextView android:id="@+id/opReportes" style="@style/MenuOpcion" android:text="📈   Reportes de ventas" />
+            <TextView android:id="@+id/opReportePdf" style="@style/MenuOpcion" android:text="📄   Reporte PDF" />
+            <TextView android:id="@+id/opBitacora" style="@style/MenuOpcion" android:text="📋   Bitácora de accesos" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCerrarSesion"
+                style="@style/Boton.Peligro"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="16dp"
+                android:text="⏏  Cerrar sesión" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

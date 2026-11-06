@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- REPORTE PDF: reporte de clientes para imprimir o compartir -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".ReportePdf"
+    tools:ignore="HardcodedText">
+
+    <include layout="@layout/barra_superior" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Contenido">
+
+            <TextView style="@style/Titulo" android:text="Reporte PDF" />
+            <TextView style="@style/Subtitulo" android:text="Reportes en PDF para imprimir o compartir" />
+
+            <LinearLayout style="@style/Tarjeta" android:padding="16dp">
+                <TextView style="@style/SeccionTitulo" android:text="📄  Reporte de clientes" android:textColor="@color/peligro" />
+                <TextView style="@style/TarjetaTexto" android:layout_marginBottom="10dp" android:text="Lista de todos los clientes registrados con su teléfono, dirección y código postal." />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGenerar" style="@style/Boton.Peligro" android:text="📄  Generar PDF" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
